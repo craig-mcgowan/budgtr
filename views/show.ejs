@@ -1,0 +1,17 @@
+<html>
+<%- include("./partials/head.ejs") %>
+<body>
+  <%- include("./partials/header.ejs", {pageTitle: transaction.name}) %>
+  <a href="/budgets">
+    <button>Back to all transactions</button>
+  </a>
+  <br>
+  <br>
+  <ul>
+    <li><span class="show-label">Date:</span> <%= transaction.date %></li>
+    <li><span class="show-label">From:</span> <%= transaction.from %></li>
+    <li><span class="show-label">Amount:</span> <%= transaction.amount %></li>
+    <li><span class="show-label">tags:</span> <%= transaction.tags %></li>
+  </ul>
+</body>
+</html>

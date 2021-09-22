@@ -1,0 +1,28 @@
+<html>
+<%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/header.ejs",{pageTitle: "Budgtr"}) %>
+    <h2>Current Balance: <span class= <%= bankAccount < 0 ? 'balance-neg' :
+            bankAccount >= 1000? 'balance-large': "balance-med" %> >  
+        <%= bankAccount %></span></h2>
+    <table>
+      <th>Date</th>
+      <th>Transaction</th>
+      <th>Amount</th>
+    <% for(let i = 0; i < allTransactions.length; i++) {%>
+      <tr>
+        <td><%= allTransactions[i].date %></td>
+        <td><a href="/budgets/<%= i %>"><%= allTransactions[i].name %></a></td>
+        <td><%= allTransactions[i].amount %></td>
+      </tr>
+
+      
+  
+    <% } %>
+    </table>
+    <a href="budgets/new">
+      <button>New Transaction</button>
+    </a>
+</body>
+
+</html>

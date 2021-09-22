@@ -1,0 +1,15 @@
+body {
+  margin: 30px;
+}
+li{
+  list-style: none;
+}
+.show-label {
+  font-weight: bold;
+}
+.balance-neg{
+  color:red;
+}
+.balance-large{
+  color: green
+}

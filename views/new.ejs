@@ -1,0 +1,27 @@
+<html>
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/header.ejs", {pageTitle: "Add a New Transaction"}) %>
+    <div class="container">
+      <form action="/budgets" method="POST">
+        <% for(const property in model) { %> 
+          <% if(typeof model[property] === 'number') { %>
+              <input type="number" name="<%= property %>" placeholder="<%=property%>">
+
+              <br>
+          <% }else if(property === "tags") {%> 
+              <input type="text" name="<%= property %>" placeholder="<%=property%> (separate by commas)">
+              <br>
+
+          <% } else { %>
+              <input type="text" name="<%= property %>" placeholder="<%=property%>">
+              <br>
+
+          <% } %>
+        <% } %>
+        <input type="submit" value="Add Transaction">
+      </form>
+    </div>
+
+  </body>
+</html>
